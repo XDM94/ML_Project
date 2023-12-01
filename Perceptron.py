@@ -3,7 +3,7 @@ import numpy as np
 from statistics import mean
 import matplotlib.pyplot as plt
 
-ITERATIONS = 1000
+ITERATIONS = 10000
 
 
 def sigmoid(x):
