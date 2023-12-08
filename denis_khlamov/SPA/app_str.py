@@ -5,7 +5,7 @@ from gpt4allj import Model
 st.set_page_config(layout='wide')
 from streamlit_option_menu import option_menu
 
-model = Model('/ML_test/denis_khlamov/SPA/model/ggml-gpt4all-j.bin')
+model = Model('/model/ggml-gpt4all-j.bin')
 
 def show_messages(text):
     messages_str = [
