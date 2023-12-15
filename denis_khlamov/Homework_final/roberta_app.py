@@ -88,14 +88,3 @@ if st.button("Clear"):
     negative_scores = []  # Clear sentiment scores
     neutral_scores = []
     positive_scores = []
-
-
-
-# Print the code
-st.button("Print Code")
-st.echo()
-st.write(" MINI PROJECT WORK DONE BY")
-st.write("KARTHICK-RA2232014010042")
-st.write("NIRANJAN-RA2232014010043")
-st.write("JIVITESH-RA2232014010048")
-st.write("HARISH-RA2232014010053")
