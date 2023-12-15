@@ -1,13 +1,9 @@
 import streamlit as st
 from transformers import pipeline
+import time
 
 
 model = pipeline(task="text-classification", model="SamLowe/roberta-base-go_emotions", top_k=None)
-
-@st.cache(allow_output_mutation=True)
-def root():
-    def load_model():
-        return pipeline
 
 st.title('Emotion Analysis')
 
@@ -20,3 +16,12 @@ if submit:
     st.write(prediction[0])
 
     print(prediction[0])
+
+if submit:
+    start = time.time()
+    prediction = model.predict([text])
+    end = time.time()
+    st.write('Prediction time taken: ', round(end - start, 2), 'seconds')
+
+    print(prediction[0])
+    st.write(prediction[0])
