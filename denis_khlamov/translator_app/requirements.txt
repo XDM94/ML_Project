@@ -1,2 +1,2 @@
-googletrans
-streamlit
+googletrans==3.1.0a0
+streamlit==1.26.0
