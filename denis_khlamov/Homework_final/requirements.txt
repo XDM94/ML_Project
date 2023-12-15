@@ -1,6 +1,2 @@
 streamlit
 transformers
-scipy
-matplotlib
-numpy
-torch
