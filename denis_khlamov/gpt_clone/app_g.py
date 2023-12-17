@@ -21,7 +21,10 @@ if prompt := st.chat_input("Спрашивай то что хочешь узна
     with st.chat_message("user"):
         st.markdown(prompt)
 
-    st.file_uploader("Choose an image:", type=["jpg", "jpeg", "png"])
+    image = st.file_uploader("Choose an image:", type=["jpg", "jpeg", "png"])
+    if image is not None:
+        st.image(image)
+
     with st.chat_message("assistant"):
         message_placeholder = st.empty()
         full_response = ""
