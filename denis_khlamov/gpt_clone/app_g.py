@@ -1,7 +1,7 @@
 from openai import OpenAI
 import streamlit as st
 
-st.title("Персональный помощник для студентов")
+st.title("Персональный помощник для студентов на основе ChatGPT 3.5 Turbo")
 st.subheader("Я могу писать конспекты, решать математические задачи, написать с нуля эссе на любую тему и многое другое!")
 
 client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
