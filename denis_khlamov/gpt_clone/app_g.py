@@ -6,6 +6,10 @@ st.subheader("Я могу писать конспекты, решать мате
 
 client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 
+image = st.file_uploader("Choose an image:", type=["jpg", "jpeg", "png"])
+if image is not None:
+    st.image(image)
+
 if "openai_model" not in st.session_state:
     st.session_state["openai_model"] = "gpt-3.5-turbo"
 
@@ -20,10 +24,6 @@ if prompt := st.chat_input("Спрашивай то что хочешь узна
     st.session_state.messages.append({"role": "user", "content": prompt})
     with st.chat_message("user"):
         st.markdown(prompt)
-
-    image = st.file_uploader("Choose an image:", type=["jpg", "jpeg", "png"])
-    if image is not None:
-        st.image(image)
 
     with st.chat_message("assistant"):
         message_placeholder = st.empty()
@@ -40,3 +40,4 @@ if prompt := st.chat_input("Спрашивай то что хочешь узна
             message_placeholder.markdown(full_response + "▌")
         message_placeholder.markdown(full_response)
     st.session_state.messages.append({"role": "assistant", "content": full_response})
+
