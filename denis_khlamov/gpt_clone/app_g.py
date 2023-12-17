@@ -6,10 +6,6 @@ st.subheader("Я могу писать конспекты, решать мате
 
 client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 
-image = st.file_uploader("Choose an image:", type=["jpg", "jpeg", "png"])
-if image is not None:
-    st.image(image)
-
 if "openai_model" not in st.session_state:
     st.session_state["openai_model"] = "gpt-3.5-turbo"
 
