@@ -1,7 +1,8 @@
 from openai import OpenAI
 import streamlit as st
 
-st.title("ChatGPT-like clone")
+st.title("Персональный помощник для студентов")
+st.subheader("Я могу писать конспекты, решать математические задачи, написать с нуля эссе на любую тему и многое другое!")
 
 client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 
@@ -15,7 +16,7 @@ for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
 
-if prompt := st.chat_input("What is up?"):
+if prompt := st.chat_input("Спрашивай то что хочешь узнать!"):
     st.session_state.messages.append({"role": "user", "content": prompt})
     with st.chat_message("user"):
         st.markdown(prompt)
